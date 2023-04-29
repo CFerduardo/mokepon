@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&display=swap");
+
+.title {
+  color: white;
+  font-size: 50px;
+}
+
+body {
+  font-family: "Change One", cursiva;
+  background-color: #041562;
+}
+
+#seleccionar-mascota {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitulo {
+  color: white;
+  font-size: 30px;
+  padding: 5px 0px 0px 0px;
+}
+
+.tarjetas,
+.tarjetas-ataque {
+  display: flex;
+  gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+  width: 160px;
+  height: 100px;
+  background: #146c94;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.tarjeta-de-mokepon img {
+  width: 80px;
+}
+
+#boton-mascota {
+  width: 110px;
+  height: 25px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  margin-top: 30px;
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  background-color: powderblue;
+  color: black;
+}
+
+#seleccionar-ataque {
+  flex-direction: column;
+  align-items: center;
+}
+
+.boton-de-ataque {
+  background: #146c94;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  color: white;
+}
+
+#mensajes {
+  width: auto;
+  background: cadetblue;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#boton-reiniciar {
+  color: #11468f;
+}
+.ataque {
+  display: grid;
+  grid-template-columns: 100px 10px;
+}
+
+.ataque-jugador,
+.ataque-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mascota-jugador {
+  padding: 0px 0px 0px 0px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+#vidas-jugador {
+  padding: 45px 30px 0px 0px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.ataque-jugador {
+  padding: 0px 10px 10px 50px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.ataque {
+  transform: translate(-102%, 10px);
+}
+
+#mascota-enemigo {
+  padding: 0px 40px 0px 75px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+#vidas-enemigo {
+  padding: 50px 40px 0px 80px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.ataque-enemigo {
+  padding: 0px 0px 0px 155px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+@media (max-width: 360px) {
+  .tarjetas,
+  .tarjetas-ataque {
+    flex-direction: column;
+  }
+}
