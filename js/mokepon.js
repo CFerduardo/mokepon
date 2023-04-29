@@ -68,9 +68,15 @@ function mostrarAtaques(ataques) {
 function secuenciaAtaque() {
   botones.forEach((boton) => {
     boton.addEventListener("click", (e) => {
-      if (e.target.texContent === "🔥💧🌱") {
+      if (e.target.texContent === "🔥🌱") {
         ataqueJugador.push("FUEGO");
         console.log(ataqueJugador);
+        boton.style.background = "#112f58";
+      } else if (e.target.texContent === "💧") {
+        ataqueJugador.push("AGUA");
+        boton.style.background = "#112f58";
+      } else {
+        ataqueJugador.push("PLANTA");
         boton.style.background = "#112f58";
       }
     });
