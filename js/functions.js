@@ -1,19 +1,25 @@
 //COMO LA VARIABLE ESTA FUERA DE TODAS LAS FUNCIONES, TODAS LAS FUNCIONES PUEDEN ACCEDER A ELLAS
-let ataqueEnemigo;
+let ataqueEnemigo = [];
 let opcionDeMokepones;
 let inputHipodoge;
 let inputCapipepo;
 let inputRatigueya;
 let mascotaJugador;
 let ataquesMokepon;
+let ataquesMokeponEnemigo;
 let botonFuego;
 let botonAgua;
 let botonPlanta;
 let botones = [];
+let indexAtaqueJugador;
+let indexAtaqueEnemigo;
 let ataqueJugador = [];
+let victoriasJugador = 0;
+let victoriasEnemigo = 0;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 let mascotaSeleccionada = false;
+let lienzo = mapa.getContext("2d");
 
 let mokepones = [];
 
@@ -87,28 +93,40 @@ const HTMLElements = {
   // Botones
   botoReiniciar: document.getElementById("boton-reiniciar"),
   botonMascotaJugador: document.getElementById("boton-mascota"),
+  botonAgua: null,
+  botonFuego: null,
+  botonPlanta: null,
 
-  // Inputs
+  // Dynamic Inputs
+  inputHipodoge: null,
+  inputCapipepo: null,
+  inputRatigueya: null,
+
+  //mapas
+  sectionVerMapa: document.getElementById("ver-mapa"),
+  mapa: document.getElementById("mapa"),
 };
 
 function iniciarJuego() {
   //METODOS PARA LLAMAR DOCUMENTOS DE HTML
 
   HTMLElements.sectionSeleccionarAtaque.style.display = "none";
+  HTMLElements.sectionVerMapa.style.display = "none";
+
   mokepones.forEach((mokepon) => {
     opcionDeMokepones = `
       <input type="radio" name="mascota" id=${mokepon.nombre} />
-      <label clas="tarjeta-de-mokepon" for=${mokepon.nombre}>
+      <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
         <p>${mokepon.nombre}</p>
-        <img src=${mokepon.foto}
+        <img class="mokepon-img" src=${mokepon.foto}
         alt=${mokepon.nombre}/>
       </label>
     `;
     contenedorTarjetas.innerHTML += opcionDeMokepones;
 
-    inputHipodoge = document.getElementById("Hipodogue");
-    inputCapipepo = document.getElementById("Capipepo");
-    inputRatigueya = document.getElementById("Ratigueya");
+    HTMLElements.inputHipodoge = document.getElementById("Hipodoge");
+    HTMLElements.inputCapipepo = document.getElementById("Capipepo");
+    HTMLElements.inputRatigueya = document.getElementById("Ratigueya");
   });
 
   // Seccion de events
