@@ -356,8 +356,6 @@ function revisarVidas() {
 }
 
 function crearMensaje(resultado) {
-    
-    
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
